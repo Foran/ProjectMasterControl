@@ -1,0 +1,12 @@
+mysql-connector-java-5.1.18-bin.jar
+jersey-client-1.12.jar
+jersey-core-1.12.jar
+jersey-json-1.12.jar
+jersey-server-1.12.jar
+jersey-servlet-1.12.jar
+jsr311-api-1.1.1.jar
+asm-3.3.1.jar
+grizzly-framework-2.2.1.jar
+grizzly-http-2.2.1.jar
+grizzly-http-server-2.2.1.jar
+jersey-grizzly2-1.12.jar
