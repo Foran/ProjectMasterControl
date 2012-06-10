@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ForansRealm.Client.WinForms
+namespace ForansRealm.ProjectMasterControl.Client.WinForms
 {
     static class Program
     {
@@ -15,7 +15,7 @@ namespace ForansRealm.Client.WinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmMainWindow());
         }
     }
 }
