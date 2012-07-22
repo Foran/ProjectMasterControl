@@ -4,8 +4,8 @@
  */
 package com.foransrealm.programmastercontrol.server.common;
 
-import com.mysql.jdbc.PreparedStatement;
 import java.io.IOException;
+import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
