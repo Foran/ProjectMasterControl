@@ -51,4 +51,12 @@ public class BaseReference {
     protected String getAuthorizedPassword() {
         return mAuthorizedPassword;
     }
+    
+    /**
+     * 
+     * @return true if authorized and false if not
+     */
+    protected boolean isAuthorized() {
+        return mAuthorizedUsername.length() > 0 ? true : false;
+    }
 }
