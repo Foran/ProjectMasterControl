@@ -5,6 +5,7 @@
 package com.foransrealm.programmastercontrol.server.model;
 
 import com.foransrealm.programmastercontrol.server.common.Database;
+import com.mysql.jdbc.NotImplemented;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.sql.PreparedStatement;
@@ -51,5 +52,8 @@ public class Project {
         ResultSet resultSet = statement.getResultSet();
         resultSet.next();
         setTitle(resultSet.getString("Title"));
+    }
+    
+    public void save() {
     }
 }
