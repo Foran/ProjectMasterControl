@@ -21,15 +21,18 @@ public class DatabaseConfiguration {
     public String username;
     @XmlAttribute(name = "Password", required = true)
     public String password;
+    @XmlAttribute(name = "Prefix", required = true)
+    public String prefix;
 
     public DatabaseConfiguration() {
 
     }
 
-    public DatabaseConfiguration(String hostname, String database, String username, String password) {
+    public DatabaseConfiguration(String hostname, String database, String username, String password, String prefix) {
         this.hostname = hostname;
         this.database = database;
         this.username = username;
         this.password = password;
+        this.prefix = prefix;
     }
 }
