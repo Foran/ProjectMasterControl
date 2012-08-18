@@ -14,7 +14,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
+ * Summary info of a Project instance
  * @author Foran
  */
 @XmlRootElement
