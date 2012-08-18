@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Data Model for Project
  */
 package com.foransrealm.programmastercontrol.server.model;
 
@@ -122,10 +121,27 @@ public class Project {
         statement.execute();
     }
     
+    /**
+     * 
+     * @return
+     * @throws SQLException
+     * @throws IOException
+     * @throws JAXBException
+     * @throws ClassNotFoundException 
+     */
     public static Project[] getProjects() throws SQLException, IOException, JAXBException, ClassNotFoundException {
         return getProjects("");
     }
     
+    /**
+     * 
+     * @param pattern
+     * @return
+     * @throws SQLException
+     * @throws IOException
+     * @throws JAXBException
+     * @throws ClassNotFoundException 
+     */
     public static Project[] getProjects(String pattern) throws SQLException, IOException, JAXBException, ClassNotFoundException {
         PreparedStatement statement = Database.getInstance().prepareStatement("SELECT Project_ID FROM " + Configuration.getInstance().databaseConfiguration.prefix + "Projects WHERE Title like ?");
         statement.setString(1, "%" + pattern + "%");
