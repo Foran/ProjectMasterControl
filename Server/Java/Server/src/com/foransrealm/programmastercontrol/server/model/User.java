@@ -5,11 +5,13 @@
 package com.foransrealm.programmastercontrol.server.model;
 
 import java.math.BigInteger;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author foran
  */
+@XmlRootElement
 public class User {
     private BigInteger mUserId;
     private String mUserName;

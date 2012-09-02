@@ -5,12 +5,14 @@
 package com.foransrealm.programmastercontrol.server.model;
 
 import java.math.BigInteger;
+import javax.xml.bind.annotation.XmlRootElement;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  *
  * @author foran
  */
+@XmlRootElement
 public class Requirement {
     private BigInteger mRequirementId;
     /**
