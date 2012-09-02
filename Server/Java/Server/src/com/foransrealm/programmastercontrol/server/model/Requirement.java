@@ -5,6 +5,7 @@
 package com.foransrealm.programmastercontrol.server.model;
 
 import java.math.BigInteger;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  *
@@ -137,5 +138,52 @@ public class Requirement {
      */
     public void setDescription(String description) {
         mDescription = description;
+    }
+    /**
+     * 
+     */
+    public Requirement() {
+        
+    }
+    /**
+     * 
+     * @param rquirementId 
+     */
+    public Requirement(BigInteger rquirementId) {
+        
+    }
+    /**
+     * 
+     * @param rquirementId 
+     */
+    public void load(BigInteger rquirementId) {
+        
+    }
+    /**
+     * 
+     */
+    public void add() {
+        
+    }
+    /**
+     * 
+     */
+    public void update() {
+        
+    }
+    /**
+     * 
+     * @return 
+     */
+    public static Requirement[] getRequirements() {
+        return getRequirements("");
+    }
+    /**
+     * 
+     * @param pattern
+     * @return 
+     */
+    public static Requirement[] getRequirements(String pattern) {
+        throw new NotImplementedException();
     }
 }
