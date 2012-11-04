@@ -66,6 +66,62 @@ LOCK TABLES `pmc_Companies` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `pmc_Company_People`
+--
+
+DROP TABLE IF EXISTS `pmc_Company_People`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pmc_Company_People` (
+  `Company_Person_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `Company_ID` bigint(20) unsigned NOT NULL,
+  `Person_ID` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`Company_Person_ID`),
+  UNIQUE KEY `Company_ID` (`Company_ID`,`Person_ID`),
+  KEY `Person_ID` (`Person_ID`),
+  CONSTRAINT `pmc_Company_People_ibfk_1` FOREIGN KEY (`Company_ID`) REFERENCES `pmc_Companies` (`Company_ID`) ON UPDATE CASCADE,
+  CONSTRAINT `pmc_Company_People_ibfk_2` FOREIGN KEY (`Person_ID`) REFERENCES `pmc_People` (`Person_ID`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pmc_Company_People`
+--
+
+LOCK TABLES `pmc_Company_People` WRITE;
+/*!40000 ALTER TABLE `pmc_Company_People` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pmc_Company_People` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pmc_Company_Projects`
+--
+
+DROP TABLE IF EXISTS `pmc_Company_Projects`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pmc_Company_Projects` (
+  `Company_Project_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `Company_ID` bigint(20) unsigned NOT NULL,
+  `Project_ID` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`Company_Project_ID`),
+  UNIQUE KEY `Company_ID` (`Company_ID`,`Project_ID`),
+  KEY `Project_ID` (`Project_ID`),
+  CONSTRAINT `pmc_Company_Projects_ibfk_1` FOREIGN KEY (`Company_ID`) REFERENCES `pmc_Companies` (`Company_ID`) ON UPDATE CASCADE,
+  CONSTRAINT `pmc_Company_Projects_ibfk_2` FOREIGN KEY (`Project_ID`) REFERENCES `pmc_Projects` (`Project_ID`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pmc_Company_Projects`
+--
+
+LOCK TABLES `pmc_Company_Projects` WRITE;
+/*!40000 ALTER TABLE `pmc_Company_Projects` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pmc_Company_Projects` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `pmc_Email_Addresses`
 --
 
@@ -119,6 +175,62 @@ LOCK TABLES `pmc_People` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `pmc_Person_Email_Addresses`
+--
+
+DROP TABLE IF EXISTS `pmc_Person_Email_Addresses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pmc_Person_Email_Addresses` (
+  `Person_Email_Address_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `Person_ID` bigint(20) unsigned NOT NULL,
+  `Email_Address_ID` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`Person_Email_Address_ID`),
+  UNIQUE KEY `Person_ID` (`Person_ID`,`Email_Address_ID`),
+  KEY `Email_Address_ID` (`Email_Address_ID`),
+  CONSTRAINT `pmc_Person_Email_Addresses_ibfk_1` FOREIGN KEY (`Person_ID`) REFERENCES `pmc_People` (`Person_ID`) ON UPDATE CASCADE,
+  CONSTRAINT `pmc_Person_Email_Addresses_ibfk_2` FOREIGN KEY (`Email_Address_ID`) REFERENCES `pmc_Email_Addresses` (`Email_Address_ID`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pmc_Person_Email_Addresses`
+--
+
+LOCK TABLES `pmc_Person_Email_Addresses` WRITE;
+/*!40000 ALTER TABLE `pmc_Person_Email_Addresses` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pmc_Person_Email_Addresses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pmc_Person_Phone_Numbers`
+--
+
+DROP TABLE IF EXISTS `pmc_Person_Phone_Numbers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pmc_Person_Phone_Numbers` (
+  `Person_Phone_Number_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `Person_ID` bigint(20) unsigned NOT NULL,
+  `Phone_Number_ID` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`Person_Phone_Number_ID`),
+  UNIQUE KEY `Person_ID` (`Person_ID`,`Phone_Number_ID`),
+  KEY `Phone_Number_ID` (`Phone_Number_ID`),
+  CONSTRAINT `pmc_Person_Phone_Numbers_ibfk_1` FOREIGN KEY (`Person_ID`) REFERENCES `pmc_People` (`Person_ID`) ON UPDATE CASCADE,
+  CONSTRAINT `pmc_Person_Phone_Numbers_ibfk_2` FOREIGN KEY (`Phone_Number_ID`) REFERENCES `pmc_Phone_Numbers` (`Phone_Number_ID`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pmc_Person_Phone_Numbers`
+--
+
+LOCK TABLES `pmc_Person_Phone_Numbers` WRITE;
+/*!40000 ALTER TABLE `pmc_Person_Phone_Numbers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pmc_Person_Phone_Numbers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `pmc_Phone_Numbers`
 --
 
@@ -142,6 +254,34 @@ CREATE TABLE `pmc_Phone_Numbers` (
 LOCK TABLES `pmc_Phone_Numbers` WRITE;
 /*!40000 ALTER TABLE `pmc_Phone_Numbers` DISABLE KEYS */;
 /*!40000 ALTER TABLE `pmc_Phone_Numbers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pmc_Project_People`
+--
+
+DROP TABLE IF EXISTS `pmc_Project_People`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pmc_Project_People` (
+  `Project_Person_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `Project_ID` bigint(20) unsigned NOT NULL,
+  `Person_ID` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`Project_Person_ID`),
+  UNIQUE KEY `Project_ID` (`Project_ID`,`Person_ID`),
+  KEY `Person_ID` (`Person_ID`),
+  CONSTRAINT `pmc_Project_People_ibfk_1` FOREIGN KEY (`Project_ID`) REFERENCES `pmc_Projects` (`Project_ID`) ON UPDATE CASCADE,
+  CONSTRAINT `pmc_Project_People_ibfk_2` FOREIGN KEY (`Person_ID`) REFERENCES `pmc_People` (`Person_ID`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pmc_Project_People`
+--
+
+LOCK TABLES `pmc_Project_People` WRITE;
+/*!40000 ALTER TABLE `pmc_Project_People` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pmc_Project_People` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -178,12 +318,11 @@ CREATE TABLE `pmc_Requirements` (
   `Requirement_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `Parent_ID` bigint(20) unsigned DEFAULT NULL,
   `Project_ID` bigint(20) unsigned NOT NULL,
-  `Title` varchar(255) NOT NULL,
-  `IsFunctional` tinyint(1) unsigned NOT NULL DEFAULT '1',
-  `Type` enum('Business','Technical','Test') NOT NULL,
+  `Summary` varchar(255) NOT NULL,
+  `Type` enum('User Story','Feature','Test','Business','Technical') NOT NULL,
   `Description` longtext NOT NULL,
   PRIMARY KEY (`Requirement_ID`),
-  UNIQUE KEY `Project_ID` (`Project_ID`,`Title`),
+  UNIQUE KEY `Project_ID` (`Project_ID`,`Summary`),
   KEY `Parent_ID` (`Parent_ID`),
   CONSTRAINT `pmc_Requirements_ibfk_1` FOREIGN KEY (`Parent_ID`) REFERENCES `pmc_Requirements` (`Requirement_ID`) ON UPDATE CASCADE,
   CONSTRAINT `pmc_Requirements_ibfk_2` FOREIGN KEY (`Project_ID`) REFERENCES `pmc_Projects` (`Project_ID`) ON UPDATE CASCADE
@@ -197,33 +336,6 @@ CREATE TABLE `pmc_Requirements` (
 LOCK TABLES `pmc_Requirements` WRITE;
 /*!40000 ALTER TABLE `pmc_Requirements` DISABLE KEYS */;
 /*!40000 ALTER TABLE `pmc_Requirements` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `pmc_Stories`
---
-
-DROP TABLE IF EXISTS `pmc_Stories`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pmc_Stories` (
-  `Story_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `Project_ID` bigint(20) unsigned NOT NULL,
-  `Title` varchar(255) NOT NULL,
-  `Description` longtext NOT NULL,
-  PRIMARY KEY (`Story_ID`),
-  UNIQUE KEY `Project_ID` (`Project_ID`,`Title`),
-  CONSTRAINT `pmc_Stories_ibfk_1` FOREIGN KEY (`Project_ID`) REFERENCES `pmc_Projects` (`Project_ID`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `pmc_Stories`
---
-
-LOCK TABLES `pmc_Stories` WRITE;
-/*!40000 ALTER TABLE `pmc_Stories` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pmc_Stories` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -268,4 +380,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-11-03 21:24:06
+-- Dump completed on 2012-11-03 21:42:51
