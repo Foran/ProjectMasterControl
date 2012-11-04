@@ -308,6 +308,34 @@ LOCK TABLES `pmc_Projects` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `pmc_Requirement_Comments`
+--
+
+DROP TABLE IF EXISTS `pmc_Requirement_Comments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pmc_Requirement_Comments` (
+  `Requirement_Comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `Requirement_ID` bigint(20) unsigned NOT NULL,
+  `Comment_ID` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`Requirement_Comment_ID`),
+  KEY `Requirement_ID` (`Requirement_ID`),
+  KEY `Comment_ID` (`Comment_ID`),
+  CONSTRAINT `pmc_Requirement_Comments_ibfk_1` FOREIGN KEY (`Requirement_ID`) REFERENCES `pmc_Requirements` (`Requirement_ID`) ON UPDATE CASCADE,
+  CONSTRAINT `pmc_Requirement_Comments_ibfk_2` FOREIGN KEY (`Comment_ID`) REFERENCES `pmc_Comments` (`Comment_ID`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pmc_Requirement_Comments`
+--
+
+LOCK TABLES `pmc_Requirement_Comments` WRITE;
+/*!40000 ALTER TABLE `pmc_Requirement_Comments` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pmc_Requirement_Comments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `pmc_Requirements`
 --
 
@@ -380,4 +408,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-11-03 21:42:51
+-- Dump completed on 2012-11-03 21:52:23
