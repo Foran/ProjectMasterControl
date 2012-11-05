@@ -78,26 +78,12 @@ public class Requirement {
         mTitle = title;
     }
     
-    private boolean mIsFunctional;
-    /**
-     * 
-     * @return 
-     */
-    public boolean getIsFunctional() {
-        return mIsFunctional;
-    }
-    /**
-     * 
-     * @param isFunctional 
-     */
-    public void setIsFunctional(boolean isFunctional) {
-        mIsFunctional = isFunctional;
-    }
-    
     /**
      * 
      */
     public enum Type {
+        UserStory,
+        Feature,
         Business,
         Technical,
         Test
