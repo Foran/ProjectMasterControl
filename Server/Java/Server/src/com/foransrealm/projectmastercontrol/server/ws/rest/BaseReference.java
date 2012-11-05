@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.foransrealm.programmastercontrol.server.ws.rest;
+package com.foransrealm.projectmastercontrol.server.ws.rest;
 
 import javax.ws.rs.HeaderParam;
 import com.sun.jersey.core.util.Base64;

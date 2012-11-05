@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.foransrealm.programmastercontrol.server.model;
+package com.foransrealm.projectmastercontrol.server.model;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlRootElement;

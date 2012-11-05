@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.foransrealm.programmastercontrol.server.common;
+package com.foransrealm.projectmastercontrol.server.common;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.foransrealm.programmastercontrol.server.ws.rest;
+package com.foransrealm.projectmastercontrol.server.ws.rest;
 
-import com.foransrealm.programmastercontrol.server.model.Project;
-import com.foransrealm.programmastercontrol.server.ws.rest.model.ProjectInfo;
+import com.foransrealm.projectmastercontrol.server.model.Project;
+import com.foransrealm.projectmastercontrol.server.ws.rest.model.ProjectInfo;
 import java.math.BigInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;

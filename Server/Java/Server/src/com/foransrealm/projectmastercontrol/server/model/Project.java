@@ -1,10 +1,10 @@
 /*
  * Data Model for Project
  */
-package com.foransrealm.programmastercontrol.server.model;
+package com.foransrealm.projectmastercontrol.server.model;
 
-import com.foransrealm.programmastercontrol.server.common.Configuration;
-import com.foransrealm.programmastercontrol.server.common.Database;
+import com.foransrealm.projectmastercontrol.server.common.Configuration;
+import com.foransrealm.projectmastercontrol.server.common.Database;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.sql.PreparedStatement;
