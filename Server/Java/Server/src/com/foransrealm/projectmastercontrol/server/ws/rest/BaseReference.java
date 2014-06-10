@@ -5,7 +5,7 @@
 package com.foransrealm.projectmastercontrol.server.ws.rest;
 
 import javax.ws.rs.HeaderParam;
-import com.sun.jersey.core.util.Base64;
+import org.glassfish.jersey.internal.util.Base64;
 
 /**
  *
@@ -16,7 +16,7 @@ public class BaseReference {
         mAuthorization = authorization;
         if(mAuthorization != null) {
             if(mAuthorization.startsWith("Basic ")) {
-                String[] parts = Base64.base64Decode(mAuthorization.substring("Basic ".length())).split(":");
+                String[] parts = Base64.decodeAsString(mAuthorization.substring("Basic ".length())).split(":");
                 if(parts.length == 2) {
                     mAuthorizedUsername = parts[0];
                     mAuthorizedPassword = parts[1];

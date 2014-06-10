@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.foransrealm.projectmastercontrol.server.ws.rest.model;
+package com.foransrealm.projectmastercontrol.server.ws.model;
 
 import com.foransrealm.projectmastercontrol.server.model.Project;
 import java.io.IOException;

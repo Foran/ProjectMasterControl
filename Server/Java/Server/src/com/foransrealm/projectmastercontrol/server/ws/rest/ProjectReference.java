@@ -5,7 +5,7 @@
 package com.foransrealm.projectmastercontrol.server.ws.rest;
 
 import com.foransrealm.projectmastercontrol.server.model.Project;
-import com.foransrealm.projectmastercontrol.server.ws.rest.model.ProjectInfo;
+import com.foransrealm.projectmastercontrol.server.ws.model.ProjectInfo;
 import java.math.BigInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
